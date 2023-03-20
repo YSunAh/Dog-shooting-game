@@ -11,7 +11,7 @@ document.body.appendChild(canvas);
 // 2. image 가져오기
 let backgroundImage, mainImage, bulletImage, enemyImage, gameOverImage;
 
-let gameOver = false; // false는 게임진행중, true는 게임이 끝남 (우주선이 바닥에 닿으면 끝)
+let gameOver = false; // false는 게임진행중, true는 게임이 끝남 (적군이 바닥에 닿으면 끝)
 let score = 0;
 
 //주인공 좌표
@@ -25,7 +25,7 @@ function Bullet() {
   this.init = function () {
     this.x = dogX + 20;
     this.y = dogY;
-    this.alive = true; // 적군과 닿이면 false
+    this.alive = true; // 적군과 닿면 false
 
     bulletList.push(this);
   };
@@ -129,7 +129,7 @@ function createEnemy() {
   }, 1000);
 }
 
-// 우주선의 xy좌표가 바뀌고
+// 의 xy좌표가 바뀌고
 function update() {
   if (39 in keysDown) {
     dogX += 5;
